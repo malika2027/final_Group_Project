@@ -128,7 +128,12 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('confirmPassword', confirmPasswordInput.value);
 
         try {
-            const response = await fetch('controllers/signup_process.php', { method: 'POST', body: formData });
+            // 👇 FIXED PATH (based on your folder structure)
+            const response = await fetch(
+                'Final_webtech_check/Final_webtech_G/Finale_project_webtech/controllers/signup_process.php',
+                { method: 'POST', body: formData }
+            );
+
             const data = await response.json();
 
             const alertDiv = document.createElement('div');
@@ -157,3 +162,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
